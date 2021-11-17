@@ -1,0 +1,173 @@
+
+
+目标办理target：loan_status
+{'Current':0,'Issued':0,'Fully Paid':0,'In Grace Period':1,'Late (31-120 days)':1,'Late (16-30 days)':1,'Charged Off':1}
+坏客户占比：0.014
+
+删除空缺/缺失率高变量
+空缺变量：id, member_id , url, desc 
+缺失率高变量：debt_settlement_flag_date, settlement_status ,settlement_date, settlement_amount settlement_percentage ,settlement_term,hardship_type, hardship_reason, hardship_status, deferral_term, hardship_amount, hardship_start_date, hardship_end_date, payment_plan_start_date hardship_length, hardship_dpd, hardship_loan_status, orig_projected_additional_accrued_interest, hardship_payoff_balance_amount, hardship_last_payment_amount 
+
+
+类别变量：字符串变量-转换数值型
+debt_settlement_flag：
+N：0，Y：1
+
+disbursement_method：
+DirectPay：0
+Cash：1
+
+hardship_flag：
+N：0
+Y：1
+
+verification_status：
+Source Verified：0
+Not Verified：1
+Verified：2
+
+verification_status_joint：
+Source Verified：0
+Not Verified：1
+Verified：2
+
+application_type：
+Individual：0
+Joint App：1
+
+initial_list_status：
+f:0
+w:1
+
+addr_state
+
+zip_code
+
+title:
+Debt consolidation:0
+Credit card refinancing:1
+Car financing:2
+Home improvement:3
+Other:4
+Major purchase:5
+Vacation:6
+Home buying:7
+Business:8
+Green loan:9
+Medical expenses:10
+Moving and relocation:11
+
+purpose	:
+debt_consolidation	0
+credit_card	1
+car	2
+home_improvement	3
+other	4
+major_purchase	5
+vacation	6
+house	7
+small_business	8
+renewable_energy	9
+medical	10
+moving	11
+
+pymnt_plan：
+N：0
+Y：1
+
+home_ownership
+MORTGAGE	0
+RENT	1
+OWN	2
+ANY	3
+
+emp_length	
+< 1 year	0
+1 year	1
+2 years	2
+3 years	3
+4 years	4
+5 years	5
+6 years	6
+7 years	7
+8 years	8
+9 years	9
+10+ years	10
+n/a	11
+
+emp_title
+sub_grade
+
+grade	
+A	0
+B 	1
+C	2
+D	3
+E	4
+F	5
+G	6
+
+term：
+36months
+60months
+
+
+时间变量
+sec_app_earliest_cr_line
+last_credit_pull_d
+next_pymnt_d
+last_pymnt_d
+earliest_cr_line
+issue_d
+
+
+单一占比高变量：
+debt_settlement_flag：
+1:0%， 0:99.9%
+信息增益0.007457311
+
+
+hardship_flag
+信息增益0.00169
+
+sec_app_mths_since_last_major_derog
+少数占比4%
+信息增益0.3
+
+acc_now_delinq
+0占比100%
+信息增益0
+
+policy_code
+1占比100%
+信息增益0
+
+collection_recovery_fee
+620值有一个，其他全部是0
+
+recoveries
+3400值有一个，其他全部是0
+
+tax_liens
+0占比100%
+
+num_tl_30dpd
+0占比100%
+
+pymnt_plan
+只有1个1，其他都是0
+
+信息增益低变量
+initial_list_status	0.007730604
+debt_settlement_flag	0.007457311
+pymnt_plan	0.002382882
+hardship_flag	0.001691123
+collection_recovery_fee	0.000686142
+recoveries	3.08575E-05
+delinq_amnt	1.38708E-05
+pub_rec	0
+policy_code	0
+acc_now_delinq	0
+num_tl_30dpd	0
+pub_rec_bankruptcies	0
+tax_liens	0
